@@ -1,9 +1,23 @@
 # Bootstrap Kit
 
-Bootstrap TK is a toolkit for creating Web Applications.  It tries to lean
-to atom API.  Bootstrap TK aims to provide views for web components.
+Bootstrap Kit is a toolkit for creating Web Applications.  It tries to lean
+to atom API.  Bootstrap Kit aims to provide views for web components.
 
-Glossary
+## Documentation
+
+You can create API documentation with endokken:
+
+   npm install -g endokken
+
+Generate documentation:
+
+   endokken
+
+View documentation:
+
+   firefox docs/README
+
+## Glossary
 
 xComponent:
   If you find a class names xComponent, it is a class, which contains a
