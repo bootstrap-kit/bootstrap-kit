@@ -1,4 +1,4 @@
-WebComponent = require './web-component.coffee'
+WebComponent = require './web-component'
 
 module.exports =
 class NavbarNav extends WebComponent

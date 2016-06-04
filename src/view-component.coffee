@@ -1,4 +1,4 @@
-{addClasses} = require './util.coffee'
+{addClasses} = require './util'
 
 # Public: Provide view for header WebComponent.
 #
@@ -44,4 +44,4 @@ class ViewComponent
 
   subscribe: ->
     @subscription = new CompositeDisposable()
-    @subscription.add @model.manageComponentsViews this
+    @subscription.add @model.manageComponentViews this

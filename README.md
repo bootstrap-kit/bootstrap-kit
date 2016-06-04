@@ -1,4 +1,4 @@
-# Bootstrap TK
+# Bootstrap Kit
 
 Bootstrap TK is a toolkit for creating Web Applications.  It tries to lean
 to atom API.  Bootstrap TK aims to provide views for web components.

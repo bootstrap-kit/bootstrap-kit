@@ -1,4 +1,4 @@
-WebComponent = require '../lib/web-component.coffee'
+WebComponent = require '../src/web-component'
 
 describe "WebComponent", ->
 

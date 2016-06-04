@@ -9,7 +9,9 @@
   "dependencies": {
     "event-kit": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "coffeeify": "^2.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

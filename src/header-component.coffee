@@ -1,5 +1,5 @@
-views = require('./view-registry.coffee').views
-ViewComponent = require('./view-component.coffee')
+views = require('./view-registry').views
+ViewComponent = require('./view-component')
 
 # Public: Provide view for header WebComponent.
 #

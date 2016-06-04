@@ -1,4 +1,4 @@
-ViewRegistry = require '../lib/view-registry.coffee'
+ViewRegistry = require '../src/view-registry'
 
 describe 'view registry', ->
   it 'can add a view provider', ->

@@ -1,5 +1,5 @@
-ViewComponent = require('./view-component.coffee')
-{addClasses} = require('./util.coffee')
+ViewComponent = require('./view-component')
+{addClasses} = require('./util')
 
 # Public: Provide view for anchor WebComponent.
 #
@@ -10,7 +10,7 @@ class BTKAnchorElement extends HTMLAnchorElement
       addClasses this, @model.options.class
 
     @innerHTML = @model.getString()
-    @model.manageComponentsViews(this)
+    @model.manageComponentViews(this)
     this
 
 module.exports = document.registerElement 'btk-a',

@@ -1,4 +1,4 @@
-{Emitter} = require '../lib/event-kit.coffee'
+{Emitter} = require '../src/event-kit'
 
 describe 'using event-kit', ->
   it "can use event-kit", ->

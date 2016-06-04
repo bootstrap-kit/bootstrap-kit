@@ -1,4 +1,4 @@
-ViewComponent = require './view-component.coffee'
+ViewComponent = require './view-component'
 
 module.exports =
 class NavbarComponent extends ViewComponent

@@ -1,4 +1,4 @@
-{addClasses} = require './util.coffee'
+{addClasses} = require './util'
 
 class BTKNavbarNavElement extends HTMLUListElement
 

@@ -1,4 +1,4 @@
-{addClasses} = require './util.coffee'
+{addClasses} = require './util'
 
 class BTKGlyphElement extends HTMLSpanElement
   setModel: (@model) ->
