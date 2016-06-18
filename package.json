@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-kit",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Bootstrap Web Toolkit.  Even a pretty general Web Toolkit providing the Model/View philosophy of atom for web browsers.",
   "main": "index.js",
   "directories": {
