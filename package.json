@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "event-kit": "^2.0.0",
-    "json-editor": "^0.7.25"
+    "json-editor": "^0.7.25",
+    "webcomponents.js": "^0.7.22"
   },
   "devDependencies": {
     "coffeeify": "^2.0.1"
@@ -24,7 +25,7 @@
     "bootstrap",
     "event-kit"
   ],
-  "author": "Kay-Uwe <kiwi@franka.dyndns.org> (Kiwi)",
+  "author": "Kay-Uwe (Kiwi) Lorenz <kiwi@franka.dyndns.org>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bootstrap-kit/bootstrap-kit/issues"
