@@ -55,12 +55,14 @@ class ViewRegistry
 
     return false
 
-  makeView: (view) ->
+  makeView: (view, object) ->
+    if view instanceof Function
+      view = view(object)
+      # returned view can be either HTMLElement or string, so it needs further
+      # processing
+
     if view instanceof HTMLElement
       return view
-
-    if view instanceof Function
-      return view(object)
 
     if typeof view is 'string'
       if view.match /^</ and view.match />$/
@@ -98,7 +100,7 @@ class ViewRegistry
     # check if object knows its view
     view = null
     if object.options?.view
-      view = makeView object.options.view
+      view = @makeView object.options.view, object
     else
       for viewProvider in @viewProviders
         if object.constructor is viewProvider.modelClass

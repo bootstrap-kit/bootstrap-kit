@@ -66,7 +66,7 @@ class Pane extends WebComponent
   #
   # Returns a {Disposable} on which `.dispose()` can be called to unsubscribe.
   onDidActiveItemChange: (callback) ->
-    @emitter.on 'did-activate-item-change', callback
+    @emitter.on 'did-active-item-change', callback
 
   # Public: Invoke given callback if item has been deactivated
   #

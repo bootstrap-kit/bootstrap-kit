@@ -1,4 +1,4 @@
-COFFEE_FILES = $(wildcard lib/*.coffee)
+COFFEE_FILES = $(wildcard src/*.coffee)
 
 
 js:
@@ -7,7 +7,8 @@ js:
 lib/%.js: src/%.coffee
 	coffee -c src/%.coffee -o lib
 
-dist/js/bootstrap-kit.js: index.js $(COFFEE_FILES)
+dist/bootstrap-kit.js: index.js $(COFFEE_FILES)
 	browserify --transform coffeeify $< > $@
+
 
 .PHONY: dist/js/bootstrap-kit.js

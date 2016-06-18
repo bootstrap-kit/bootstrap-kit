@@ -209,20 +209,31 @@ class WebComponent
   onDidClearData: (callback) ->
     @emitter.on 'did-clear-data', callback
 
+  ###
+  Section: View API
+  ###
+
   # Public: Set view of this component
   #
   # * `view` to be set
   #
   # Either replace or set view of this component to be `view`
   setView: (view) ->
-    if WebComponent.hasView(this)
-      WebComponent.replaceView(this, view)
+    if views.hasView(this)
+      views.replaceView(this, view)
+      @options.view = view
     else
-      WebComponent.setView(this, view)
+      @options.view = view
+      views.getView(this)
+
+  # Public: Get view of this component
+  #
+  # Returns view for this component.
+  getView: ->
+    WebComponent.getView(this)
 
   ###
   Section: Managing Components
-
   ###
 
   # Public: Add a component

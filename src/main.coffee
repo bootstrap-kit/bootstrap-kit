@@ -1,6 +1,11 @@
 # {Disposable, CompositeDisposable, Emitter} = require './event-kit'
+
+#require 'json-editor'
+
+require 'json-editor/dist/jsoneditor.min.js'
+
 {Disposable, CompositeDisposable, Emitter} = require 'event-kit'
-{copyProperties} = require './util'
+{copyProperties, str2elem} = require './util'
 
 # See https://coderwall.com/p/h5e9mg/mixins-in-coffeescript
 unless Function::mixin
@@ -46,8 +51,47 @@ class Aside extends WebComponent
 WebComponent.addViewProvider Aside, (object) ->
   (new ViewComponent object, 'aside').setModel(object)
 
+class Form extends WebComponent
+addViewProvider Form, require './form-element'
+
+makeElement = str2elem
+
 module.exports = {
   Anchor, Glyph, Header, Navbar, NavbarNav, Pane, PaneItem, MenuItem,
   Aside, SidebarMenu, WebComponent, ViewComponent, addViewProvider,
-  RestWebComponent
+  RestWebComponent, str2elem, makeElement,
+  Emitter, Disposable, CompositeDisposable,
+  Form,
+
+  addPane: (name, pane) ->
+    @panes ?= {}
+    @panes[name] = pane
+
+  getPane: (name) ->
+    @panes[name]
+
+  addTrigger: (name, trigger) ->
+    @triggers ?= {}
+    @triggers[name] = trigger
+
+  getTrigger: (name) ->
+    @triggers[name]
+
+  trigger: (name) ->
+    @getTrigger(name)?()
+
+  slugify: (title) ->
+    title.replace(/\W+/, '-').toLowerCase()
+
+  # form: (name, schema) ->
+  #   e = makeElement """<div id="name"></div>"""
+  #   new JSONEditor e, {
+  #     theme: 'bootstrap3'
+  #     options: {
+  #       disable_edit_json: true
+  #       disable_properties: true
+  #     }
+  #     schema
+  #   }
+
   }

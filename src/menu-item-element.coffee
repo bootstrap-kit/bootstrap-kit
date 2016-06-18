@@ -11,13 +11,13 @@ class BTKMenuItemElement extends HTMLLIElement
         anchor.addEventListener 'click', =>
           @model.trigger()
 
-    @model.observeComponents (component) =>
-      if not @classList.contains 'treeview'
-        @classList.add 'treeview'
-        @innerHTML += '<ul class="treeview-menu"></ul>'
-
-      element = @querySelector 'ul.treeview-menu'
-      @attachComponentView element, component
+    # @model.observeComponents (component) =>
+    #   if not @classList.contains 'treeview'
+    #     @classList.add 'treeview'
+    #     @innerHTML += '<ul class="treeview-menu"></ul>'
+    #
+    #   element = @querySelector 'ul.treeview-menu'
+    #   @attachComponentView element, component
 
     this
 
