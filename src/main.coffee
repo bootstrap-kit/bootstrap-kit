@@ -3,7 +3,7 @@
 #require 'json-editor'
 
 require 'json-editor/dist/jsoneditor.min.js'
-require 'webcomponents.js/webcomponents.min.js'
+# require 'webcomponents.js/webcomponents.min.js'
 
 {Disposable, CompositeDisposable, Emitter} = require 'event-kit'
 {copyProperties, str2elem} = require './util'
