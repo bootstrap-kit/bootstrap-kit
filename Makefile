@@ -1,6 +1,7 @@
 COFFEE_FILES = $(wildcard src/*.coffee)
 
 
+all: dist/bootstrap-kit.js js
 js:
 	coffee -c -o lib src/*.coffee
 
