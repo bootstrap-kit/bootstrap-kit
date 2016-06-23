@@ -47,7 +47,7 @@ class RestWebCopmonent extends WebComponent
   # This function gets data from host and starts updating data by calling
   # {WebComponent::updateData}
   updateFromHost: ->
-    $.get @getUpdateURL(), @getParams(), (data) =>
+    $.get url = @getUpdateURL(), @getParams(), (data) =>
       @updateData(data)
     .fail (res, textStatus, error) =>
       @setView """

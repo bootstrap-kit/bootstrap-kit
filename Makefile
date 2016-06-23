@@ -9,7 +9,7 @@ lib/%.js: src/%.coffee
 	coffee -c src/%.coffee -o lib
 
 dist/bootstrap-kit.js: index.js $(COFFEE_FILES)
-	browserify --transform coffeeify $< > $@
+	browserify --extension=.coffee --transform coffeeify $< > $@
 
 
 .PHONY: dist/js/bootstrap-kit.js

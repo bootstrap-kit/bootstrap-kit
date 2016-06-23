@@ -1,9 +1,4 @@
-# {Disposable, CompositeDisposable, Emitter} = require './event-kit'
-
-#require 'json-editor'
-
 require 'json-editor/dist/jsoneditor.min.js'
-# require 'webcomponents.js/webcomponents.min.js'
 
 {Disposable, CompositeDisposable, Emitter} = require 'event-kit'
 {copyProperties, str2elem} = require './util'
@@ -12,6 +7,9 @@ require 'json-editor/dist/jsoneditor.min.js'
 unless Function::mixin
   Function::mixin = (mixin) ->
     copyProperties mixin::, @::
+
+mixin = (target, source) ->
+  copyProperties source::, target
 
 WebComponent  = require './web-component'
 RestWebComponent  = require './rest-web-component'
@@ -63,6 +61,7 @@ module.exports = {
   RestWebComponent, str2elem, makeElement,
   Emitter, Disposable, CompositeDisposable,
   Form,
+  mixin,
 
   addPane: (name, pane) ->
     @panes ?= {}
@@ -83,6 +82,8 @@ module.exports = {
 
   slugify: (title) ->
     title.replace(/\W+/, '-').toLowerCase()
+
+
 
   # form: (name, schema) ->
   #   e = makeElement """<div id="name"></div>"""

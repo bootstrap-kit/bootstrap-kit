@@ -10,7 +10,7 @@ initViews = (object) ->
 
   # View of a standard web component is HTML representation of its string.
   views.addViewProvider WebComponent, (object) ->
-    e = str2elem(object.getString())
+    e = str2elem(object.getString() or '<div></div>')
 
     if object.action
       e.addEventListener 'click', ->
@@ -171,15 +171,24 @@ class WebComponent
     @emitter.emit 'did-clear-data'
 
   # Public: Set data store stored in component
-  setData: (object) ->
-    @clearData()
-    @updateData(object)
-    @emitter.emit 'did-set-data', @data
-    @data
+  setData: (args...) ->
+    if args.length is 2
+      obj = {}
+      obj[args[0]] = args[1]
+      @updateData obj
+
+    else
+      @clearData()
+      @updateData(object)
+      @emitter.emit 'did-set-data', @data
+      @data
 
   # Public: Get data stored in component
-  getData: ->
-    @data
+  getData: (name) ->
+    if name?
+      @data[name]
+    else
+      @data
 
   # Public: Invoke the given callback if data has been updated
   #
@@ -228,9 +237,14 @@ class WebComponent
 
   # Public: Get view of this component
   #
+  # * `selector` an optional selector, which is applied with `querySelector`
+  #
   # Returns view for this component.
-  getView: ->
-    WebComponent.getView(this)
+  getView: (selector) ->
+    if selector
+      WebComponent.getView(this).querySelector(selector)
+    else
+      WebComponent.getView(this)
 
   ###
   Section: Managing Components
@@ -352,6 +366,11 @@ class WebComponent
     component.container = null
     @components.remove(component)
     @emitter.emit 'did-remove-component', {parent: this, component}
+
+  # Public: Remove all components
+  removeComponents: () ->
+    for component in @getComponents()
+      @removeComponent(component)
 
   # Public: Invoke callback if component has been triggered
   onDidTrigger: (callback) ->
