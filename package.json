@@ -9,6 +9,8 @@
   "dependencies": {
     "event-kit": "^2.0.0",
     "json-editor": "^0.7.25",
+    "markdown-it": "^7.0.0",
+    "markdown-it-highlightjs": "^2.0.0",
     "webcomponents.js": "^0.7.22"
   },
   "devDependencies": {

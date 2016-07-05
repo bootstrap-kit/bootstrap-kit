@@ -1,4 +1,7 @@
 require 'json-editor/dist/jsoneditor.min.js'
+markdownit = require('markdown-it')
+markdown   = markdownit()
+markdown.use require('markdown-it-highlightjs')
 
 {Disposable, CompositeDisposable, Emitter} = require 'event-kit'
 {copyProperties, str2elem} = require './util'
@@ -59,7 +62,7 @@ module.exports = {
   Anchor, Glyph, Header, Navbar, NavbarNav, Pane, PaneItem, MenuItem,
   Aside, SidebarMenu, WebComponent, ViewComponent, addViewProvider,
   RestWebComponent, str2elem, makeElement,
-  Emitter, Disposable, CompositeDisposable,
+  Emitter, Disposable, CompositeDisposable, markdown,
   Form,
   mixin,
 

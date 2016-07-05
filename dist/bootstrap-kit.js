@@ -348,7 +348,6 @@ module.exports = require('./lib/main')
     Emitter: Emitter,
     Disposable: Disposable,
     CompositeDisposable: CompositeDisposable,
-    ContentWrapper: ContentWrapper,
     Form: Form,
     mixin: mixin,
     addPane: function(name, pane) {
