@@ -815,6 +815,8 @@ module.exports = require('./lib/main')
 
   PaneItem = require('./pane-item');
 
+  addViewProvider(PaneItem, WebComponent.getViewProvider(WebComponent));
+
   MenuItem = (function(superClass) {
     extend(MenuItem, superClass);
 

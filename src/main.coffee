@@ -44,7 +44,7 @@ Pane = require './pane'
 addViewProvider Pane, require './pane-element'
 
 PaneItem = require './pane-item'
-addViewProvider PaneItem, WebComponent.getViewProvider(WebComponent)
+addViewProvider PaneItem, require './pane-item-element.coffee'
 
 class MenuItem extends WebComponent
 addViewProvider MenuItem, require './menu-item-element'
