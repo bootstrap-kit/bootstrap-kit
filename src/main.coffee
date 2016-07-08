@@ -1,5 +1,7 @@
 require 'json-editor/dist/jsoneditor.min.js'
 markdownit = require('markdown-it')
+
+
 markdown   = markdownit()
 markdown.use require('markdown-it-highlightjs')
 
@@ -42,6 +44,7 @@ Pane = require './pane'
 addViewProvider Pane, require './pane-element'
 
 PaneItem = require './pane-item'
+addViewProvider PaneItem, WebComponent.getViewProvider(WebComponent)
 
 class MenuItem extends WebComponent
 addViewProvider MenuItem, require './menu-item-element'
