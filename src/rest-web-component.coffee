@@ -46,7 +46,7 @@ class RestWebCopmonent extends WebComponent
   #
   # This function gets data from host and starts updating data by calling
   # {WebComponent::updateData}
-  updateFromHost: ->
+  fetchData: ->
     $.get url = @getUpdateURL(), @getParams(), (data) =>
       @updateData(data)
     .fail (res, textStatus, error) =>
@@ -74,9 +74,9 @@ class RestWebCopmonent extends WebComponent
     @endUpdating()
 
     if opts.now isnt false
-      @updateFromHost()
+      @fetchData()
 
-    @updateInterval = setInterval (=> @updateFromHost()), interval
+    @updateInterval = setInterval (=> @fetchData()), interval
 
   # Public: End updating data regularly
   endUpdating: ->
